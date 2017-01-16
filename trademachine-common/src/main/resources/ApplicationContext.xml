@@ -10,9 +10,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<!-- Global -->
 
 	<!-- Service -->
-
-	<!-- Service -->
-
 	<bean id="tradingService" class="com.lsy.trademachine.service.imp.TradingService">
 	</bean>
+	<!-- Service -->
 </beans>
