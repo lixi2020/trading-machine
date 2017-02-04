@@ -1,5 +1,8 @@
 package com.lsy.trademachine.strategy.imp;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -60,7 +63,9 @@ public class AverageMovingWindow extends BaseStrategy implements
 					//Print ticker
 					logger.info(ticker.toString());
 					//likely goes up, buy!
-					coin=(double)(Math.round((money/buy)*100)/100.0);
+					DecimalFormat df=new DecimalFormat("#.0000");
+					df.setRoundingMode(RoundingMode.DOWN);
+					coin=Double.parseDouble(df.format(money/buy));
 					money=0;
 					hasMoney=false;
 					netWorth=coin*sell;
@@ -82,7 +87,7 @@ public class AverageMovingWindow extends BaseStrategy implements
 			
 			
 
-			Thread.sleep(20000l);
+			Thread.sleep(2000l);
 		}
 	}
 
