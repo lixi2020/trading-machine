@@ -9,7 +9,6 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 import com.lsy.trademachine.exrternalAPI.ICHBTCRestAPI;
-import com.lsy.trademachine.exrternalAPI.datacontract.Ticker;
 import com.lsy.trademachine.exrternalAPI.datacontract.TickerResponse;
 
 public class CHBTCRestAPI implements ICHBTCRestAPI {
@@ -21,7 +20,7 @@ public class CHBTCRestAPI implements ICHBTCRestAPI {
 
 	@Override
 	public TickerResponse getTicker() {
-		final String uri = "http://api.chbtc.com/data/v1/ticker?currency=eth_cny";
+		final String uri = "http://api.chbtc.com/data/v1/ticker";
 		RestTemplate restTemplate = new RestTemplate();
 		for (HttpMessageConverter<?> myConverter : restTemplate
 				.getMessageConverters()) {

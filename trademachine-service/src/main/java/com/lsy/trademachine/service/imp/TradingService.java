@@ -20,7 +20,6 @@ public class TradingService implements ITradingService {
 	public void startTrading() {
 		try {
 			strategy.start();
-			strategy.end();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

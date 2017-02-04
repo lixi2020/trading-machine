@@ -11,7 +11,7 @@ public class AppStart {
 				"classpath:ApplicationContext.xml");
 		TradingService tradingService = (TradingService) applicationContext
 				.getBean("tradingService");
-		tradingService.healthCheck();
+		tradingService.startTrading();
 	}
 
 }
